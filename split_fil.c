@@ -356,7 +356,7 @@ int main(int argc, char* argv[])
   
   long totalSamples = (long)((double)length/(double)tsamp);
 
-  for(long i=0;i<totalSamples;i++)
+  for(long i=0;i<totalSamples;i=i+numSamples)
   {
     fread(data,sizeof(char),numSamples*nchans,fpin);
     fwrite(data,sizeof(char),numSamples*nchans,fpout);
